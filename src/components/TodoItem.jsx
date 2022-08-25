@@ -1,9 +1,15 @@
 import React from 'react';
+import Checkbox from "./Checkbox";
+import DeleteButton from "./DeleteButton";
+import '../styles/TodoItem.css';
 
-const TodoItem = () => {
+
+const TodoItem = ({children}) => {
     return (
-        <div>
-            
+        <div className="TodoItem">
+            <Checkbox/>
+            <div className="title">{children}</div>
+            <DeleteButton/>
         </div>
     );
 };
