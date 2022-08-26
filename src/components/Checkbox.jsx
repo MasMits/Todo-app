@@ -1,12 +1,13 @@
-import imgComleted from "../img/completed.svg";
+import imgCompleted from "../img/completed.svg";
 import imgUncompleted from "../img/uncompleted.svg";
 
 const Checkbox = (props) => {
 
     return (
         <div className="Checkbox">
-            <button onClick={props.Change}>
-            <img src= {props.isCompleted ? imgComleted : imgUncompleted} alt="checkbox"/>
+            {/*<button onClick={console.log("test 1")}>*/}
+            <button onClick={() => props.change(props.id)}>
+            <img src= {props.isCompleted ? imgCompleted : imgUncompleted} alt="checkbox"/>
             </button>
         </div>
     );

@@ -4,7 +4,7 @@ import imgDeleteButton from "../img/Delete.svg";
 const DeleteButton = (props) => {
     return (
         <div className="DeleteButton">
-            <button onClick={props.deleteItem}>
+            <button onClick={() => props.deleteItem(props.id)}>
                 <img src= {imgDeleteButton} alt="delete button" />
             </button>
         </div>

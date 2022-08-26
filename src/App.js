@@ -10,10 +10,36 @@ const [todos, setTodos] = useState([
       {id: 3, title:'Something 3', isCompleted: false},
     ]
 )
-  const addItem = () => {}
-  const deleteItem = () => {}
-  const change = () => {}
+    function addItem(title) {
+        console.log('test 1');
+        setTodos([...todos, {
+           id: Date.now(),
+           title,
+           isComplited: false
+        },
+    ])}
 
+
+    function deleteItem(id) {
+        console.log('test 2');
+        setTodos(todos.filter(p => p.id !== id));
+
+    }
+
+    function change(id) {
+        console.log('test 3');
+        console.log(id);
+        let _todos = [];
+
+        todos.forEach((value, key) => {
+            _todos[key] = value;
+            if(value.id === id) {
+                _todos[key].isCompleted = !_todos[key].isCompleted;
+            }
+        })
+        setTodos(_todos);
+
+    }
   return (
     <div className="app">
         <div className="todo-list">

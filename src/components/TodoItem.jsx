@@ -4,12 +4,12 @@ import DeleteButton from "./DeleteButton";
 import '../styles/TodoItem.css';
 
 
-const TodoItem = ({id, todoItem,  deleteItem, change}) => {
+const TodoItem = ({todoItem,  deleteItem, change}) => {
     return (
         <div className="TodoItem">
-            <Checkbox isCompleted={todoItem.isCompleted} change={change}/>
+            <Checkbox id={todoItem.id} isCompleted={todoItem.isCompleted} change={change}/>
             <div className="title">{todoItem.title}</div>
-            <DeleteButton deleteItem={deleteItem}/>
+            <DeleteButton id={todoItem.id} deleteItem={deleteItem} />
         </div>
     );
 };
