@@ -1,0 +1,22 @@
+.TodoInputClass {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 43px;
+    margin: 50px 0px 15px 0px;
+    gap: 26px;
+
+    width: 375px;
+    height: 57px;
+    left: 10px;
+    top: 20px;
+
+    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+    background: #FFFFFF;
+}
+.input{
+    border: none;
+    outline: none;
+    width: 100%;
+}
