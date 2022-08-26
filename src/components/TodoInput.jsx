@@ -4,7 +4,7 @@ const TodoInput = (props) => {
     const[title, setTitle] = useState('');
     return (
         <div className='TodoInputClass'>
-            <input
+            <input className='input'
             type={'text'}
             onChange = {e => setTitle(e.target.value)}
             value={title}
