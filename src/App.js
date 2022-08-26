@@ -5,32 +5,23 @@ import React, {useState} from 'react';
 
 function App() {
 const [todos, setTodos] = useState([
-      {id: 1, title:'Smth', isComplited: false},
-      {id: 2, title:'Smth2', isComplited: false},
-      {id: 3, title:'Smth3', isComplited: false},
+      {id: 1, title:'Something', isCompleted: false},
+      {id: 2, title:'Something 2', isCompleted: false},
+      {id: 3, title:'Something 3', isCompleted: false},
     ]
 )
-  const addItem = (e) => {
-    // setTodos([...todos, {
-    //   id: Date.now(),
-    //   children, //title
-    //   isComplited: false
-    // }
-  }
+  const addItem = () => {}
+  const deleteItem = () => {}
+  const change = () => {}
 
   return (
-    <div className="App">
-
-      <TodoInput
-          value={todos}
-      />
-      {todos.map((todoItem) =>
-          <div
-              className = "player-wrapper"
-              key= {todoItem.id}>
-            <TodoItem todoItem={todoItem} key= {todoItem.id} />
-          </div>
-      )}
+    <div className="app">
+        <div className="todo-list">
+            <TodoInput value={todos} addItem={addItem}/>
+            {todos.map((todoItem) =>
+                <TodoItem key={todoItem.id} todoItem={todoItem} deleteItem={deleteItem} change={change}/>
+            )}
+        </div>
     </div>
   );
 }
