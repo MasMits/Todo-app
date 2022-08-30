@@ -2,6 +2,7 @@ import './styles/App.css';
 import TodoInput from "./components/TodoInput";
 import TodoItem from "./components/TodoItem";
 import React, {useState} from 'react';
+import Footer from "./components/Footer";
 
 function App() {
 const [todos, setTodos] = useState([
@@ -47,6 +48,7 @@ const [todos, setTodos] = useState([
             {todos.map((todoItem) =>
                 <TodoItem key={todoItem.id} todoItem={todoItem} deleteItem={deleteItem} change={change}/>
             )}
+            <Footer/>
         </div>
     </div>
   );
