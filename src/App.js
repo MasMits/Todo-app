@@ -13,12 +13,15 @@ const [todos, setTodos] = useState([
 )
     function addItem(title) {
         console.log('test 1');
-        setTodos([...todos, {
-           id: Date.now(),
-           title,
-           isComplited: false
-        },
-    ])}
+        if(title){
+            const newItem = {
+               id: Date.now(),
+               title,
+               isComplited: false
+            }
+            setTodos([...todos, newItem]);
+        }
+    }
 
 
     function deleteItem(id) {
