@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
+import Checkbox from "./Checkbox";
 import '../styles/TodoInput.css';
 
 const TodoInput = ({addItem}) => {
 
     const[title, setTitle] = useState('');
+
     return (
         <div className='TodoInputClass'>
             <Checkbox/>
