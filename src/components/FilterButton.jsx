@@ -1,9 +1,12 @@
 import React from 'react';
 
-const FilterButton = () => {
+const FilterButton = ({action, children}) => {
+
     return (
         <div>
-            
+            <button className="FilterButton" onClick={action}>
+                {children}
+            </button>
         </div>
     );
 };

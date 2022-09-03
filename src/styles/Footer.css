@@ -17,5 +17,18 @@
 }
 
 .filters_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 7px;
+    gap: 15px;
     color: #808080;
+}
+
+.FilterButton{
+    color: #808080
+}
+
+.FilterButton:active {
+    color: #000000
 }

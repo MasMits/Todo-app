@@ -4,14 +4,21 @@ import ItemCounter from "./ItemCounter";
 import FilterButton from "./FilterButton";
 import ClearChecked from "./ClearChecked";
 
-const Footer = () => {
+const Footer = (props) => {
+
     return (
         <div className="footer">
             <ItemCounter/>
             <div className="filters_button">
-                <FilterButton/>
-                <FilterButton/>
-                <FilterButton/>
+                <FilterButton className={""} action={() => props.setFilter("All")}>
+                    All
+                </FilterButton>
+                <FilterButton action={() => props.setFilter("Active")}>
+                    Active
+                </FilterButton>
+                <FilterButton action={() => props.setFilter("Checked")}>
+                    Checked
+                </FilterButton>
             </div>
             <ClearChecked/>
         </div>

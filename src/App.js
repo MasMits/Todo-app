@@ -5,19 +5,22 @@ import React, {useState} from 'react';
 import Footer from "./components/Footer";
 
 function App() {
-const [todos, setTodos] = useState([
-      {id: 1, title:'Something', isCompleted: false},
-      {id: 2, title:'Something 2', isCompleted: false},
-      {id: 3, title:'Something 3', isCompleted: false},
-    ]
-)
+    const [todos, setTodos] = useState([
+          {id: 1, title:'Something', isCompleted: false},
+          {id: 2, title:'Something 2', isCompleted: false},
+          {id: 3, title:'Something 3', isCompleted: false},
+        ]
+    )
+
+    const [filter, setFilter] = useState("Active");
+
     function addItem(title) {
         console.log('test 1');
         if(title){
             const newItem = {
                id: Date.now(),
                title,
-               isComplited: false
+                isCompleted: false
             }
             setTodos([...todos, newItem]);
         }
@@ -30,7 +33,7 @@ const [todos, setTodos] = useState([
 
     }
 
-    function change(id) {
+    function changeCheckBox(id) {
         console.log('test 3');
         console.log(id);
         let _todos = [];
@@ -44,14 +47,26 @@ const [todos, setTodos] = useState([
         setTodos(_todos);
 
     }
+
+    function todosFilter(todos, filter){
+        switch(filter) {
+            case "Active":
+                return todos.filter(item => item.isCompleted === false);
+            case "Checked":
+                return todos.filter(item => item.isCompleted === true);
+            default:
+                return todos;
+        }
+    }
+
   return (
     <div className="app">
         <div className="todo-list">
             <TodoInput value={todos} addItem={addItem}/>
-            {todos.map((todoItem) =>
-                <TodoItem key={todoItem.id} todoItem={todoItem} deleteItem={deleteItem} change={change}/>
+            {todosFilter(todos, filter).map((todoItem) =>
+                <TodoItem key={todoItem.id} todoItem={todoItem} deleteItem={deleteItem} change={changeCheckBox}/>
             )}
-            <Footer/>
+            { todos.length ? <Footer setFilter={setFilter}/> : <div> </div>}
         </div>
     </div>
   );
