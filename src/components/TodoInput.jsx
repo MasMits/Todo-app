@@ -8,7 +8,7 @@ const TodoInput = ({addItem}) => {
 
     return (
         <div className='TodoInputClass'>
-            <Checkbox/>
+            <div className='input__checkbox'><Checkbox /></div>
             <input className='input'
                    type={'text'}
                    onChange = {e => setTitle(e.target.value)}

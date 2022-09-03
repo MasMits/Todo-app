@@ -20,3 +20,6 @@
     outline: none;
     width: 100%;
 }
+.input__checkbox{
+    transform: rotate(-45deg);
+}
