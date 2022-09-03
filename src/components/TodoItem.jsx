@@ -8,7 +8,7 @@ const TodoItem = ({todoItem,  deleteItem, change, changeEditingMode, setItemTitl
     const[title, setTitle] = React.useState(todoItem.title);
 
     return (
-        <div>
+        <div className="element">
             {!todoItem.isEditing?
             <div className="TodoItem" onDoubleClick={() => changeEditingMode(todoItem.id)}>
                 <Checkbox id={todoItem.id} isCompleted={todoItem.isCompleted} change={change}/>

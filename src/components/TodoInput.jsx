@@ -7,7 +7,7 @@ const TodoInput = ({addItem, checkAllButton, isAllCheck}) => {
     const[title, setTitle] = useState('');
 
     return (
-        <div className='TodoInputClass'>
+        <div className='TodoInputClass element'>
             <div className='input__checkbox'><Checkbox change={() => checkAllButton()} isCompleted={isAllCheck}/></div>
             <input className='input'
                    type={'text'}

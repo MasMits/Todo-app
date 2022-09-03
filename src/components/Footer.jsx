@@ -1,13 +1,13 @@
 import React from 'react';
-import '../styles/Footer.css';
 import ItemCounter from "./ItemCounter";
 import FilterButton from "./FilterButton";
 import ClearChecked from "./ClearChecked";
+import '../styles/Footer.css';
 
 const Footer = (props) => {
 
     return (
-        <div className="footer">
+        <div className="footer element">
             <ItemCounter todos={props.todos}/>
             <div className="filters_button">
                 <FilterButton className={""} action={() => props.setFilter("All")}>
