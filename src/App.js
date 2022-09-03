@@ -27,11 +27,16 @@ function App() {
         }
     }
 
-
     function deleteItem(id) {
         console.log('test 2');
-        setTodos(todos.filter(p => p.id !== id));
-
+        let _todos = [];
+        todos.forEach((value, key) => {
+            if(value.id === id) {
+                return;
+            }
+            _todos[key] = value;
+        })
+        setTodos(_todos);
     }
 
     function changeCheckBox(id) {
@@ -84,14 +89,43 @@ function App() {
         }
     }
 
+    function clearChecked(){
+        let _todos = [];
+        todos.forEach((value, key) => {
+            if(value.isCompleted) {
+                return;
+            }
+            _todos.push(value);
+        })
+        setTodos(_todos);
+    }
+
+    let isAllCheck = true;
+
+    todos.forEach((value, key) => {
+        if(value.isCompleted === true) return;
+        isAllCheck = false;
+
+    })
+
+    function checkAllButton() {
+        let _todos = [];
+        todos.forEach((value, key) => {
+            _todos[key] = value;
+            _todos[key].isCompleted = !isAllCheck;
+        })
+        isAllCheck = !isAllCheck;
+        setTodos(_todos);
+    }
+
     return (
     <div className="app">
         <div className="todo-list">
-            <TodoInput value={todos} addItem={addItem}/>
+            <TodoInput value={todos} addItem={addItem} checkAllButton={checkAllButton} isAllCheck={isAllCheck}/>
             {todosFilter(todos, filter).map((todoItem) =>
                 <TodoItem key={todoItem.id} todoItem={todoItem} deleteItem={deleteItem} change={changeCheckBox} changeEditingMode={changeEditingMode} setItemTitle={setItemTitle}/>
             )}
-            { todos.length ? <Footer setFilter={setFilter}/> : <div> </div>}
+            { todos.length ? <Footer setFilter={setFilter} clearChecked={clearChecked}/> : <div> </div>}
         </div>
     </div>
   );
