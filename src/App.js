@@ -64,7 +64,7 @@ function App() {
         <div className="todo-list">
             <TodoInput value={todos} addItem={addItem}/>
             {todosFilter(todos, filter).map((todoItem) =>
-                <TodoItem key={todoItem.id} todoItem={todoItem} deleteItem={deleteItem} change={changeCheckBox}/>
+                <TodoItem key={todoItem.id} todoItem={todoItem} deleteItem={deleteItem} change={changeCheckBox} changeEditingMode={changeEditingMode} setItemTitle={setItemTitle}/>
             )}
             { todos.length ? <Footer setFilter={setFilter}/> : <div> </div>}
         </div>
