@@ -125,7 +125,7 @@ function App() {
             {todosFilter(todos, filter).map((todoItem) =>
                 <TodoItem key={todoItem.id} todoItem={todoItem} deleteItem={deleteItem} change={changeCheckBox} changeEditingMode={changeEditingMode} setItemTitle={setItemTitle}/>
             )}
-            { todos.length ? <Footer setFilter={setFilter} clearChecked={clearChecked}/> : <div> </div>}
+            { todos.length ? <Footer todos={todos} setFilter={setFilter} clearChecked={clearChecked}/> : <div> </div>}
         </div>
     </div>
   );

@@ -8,7 +8,7 @@ const Footer = (props) => {
 
     return (
         <div className="footer">
-            <ItemCounter/>
+            <ItemCounter todos={props.todos}/>
             <div className="filters_button">
                 <FilterButton className={""} action={() => props.setFilter("All")}>
                     All
