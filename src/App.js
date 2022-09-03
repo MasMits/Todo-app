@@ -84,6 +84,10 @@ function App() {
         }
     }
 
+    function clearChecked(){
+        setTodos([])
+    }
+
     return (
     <div className="app">
         <div className="todo-list">
@@ -91,7 +95,7 @@ function App() {
             {todosFilter(todos, filter).map((todoItem) =>
                 <TodoItem key={todoItem.id} todoItem={todoItem} deleteItem={deleteItem} change={changeCheckBox} changeEditingMode={changeEditingMode} setItemTitle={setItemTitle}/>
             )}
-            { todos.length ? <Footer setFilter={setFilter}/> : <div> </div>}
+            { todos.length ? <Footer setFilter={setFilter} clearChecked={clearChecked}/> : <div> </div>}
         </div>
     </div>
   );

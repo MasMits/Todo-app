@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ClearChecked = () => {
+const ClearChecked = ({clearChecked}) => {
     return (
-        <div>
-            
-        </div>
+        <button onClick={clearChecked}>
+            Clear checked
+        </button>
     );
 };
 

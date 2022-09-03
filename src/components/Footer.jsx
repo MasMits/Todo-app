@@ -20,7 +20,7 @@ const Footer = (props) => {
                     Checked
                 </FilterButton>
             </div>
-            <ClearChecked/>
+            <ClearChecked clearChecked={props.clearChecked}/>
         </div>
     );
 };
