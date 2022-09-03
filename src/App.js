@@ -12,7 +12,7 @@ function App() {
         ]
     )
 
-    const [filter, setFilter] = useState("Active");
+    const [filter, setFilter] = useState("All");
 
     function addItem(title) {
         console.log('test 1');
@@ -20,7 +20,8 @@ function App() {
             const newItem = {
                id: Date.now(),
                title,
-                isCompleted: false
+                isCompleted: false,
+                isEditing: false,
             }
             setTodos([...todos, newItem]);
         }
@@ -48,6 +49,30 @@ function App() {
 
     }
 
+    function changeEditingMode(id){
+        let _todos = [];
+
+        todos.forEach((value, key) => {
+            _todos[key] = value;
+            if(value.id === id) {
+                _todos[key].isEditing = !_todos[key].isEditing;
+            }
+        })
+        setTodos(_todos);
+    }
+
+    function setItemTitle(id, title){
+        let _todos = [];
+
+        todos.forEach((value, key) => {
+            _todos[key] = value;
+            if(value.id === id) {
+                _todos[key].title = title;
+            }
+        })
+        setTodos(_todos);
+    }
+
     function todosFilter(todos, filter){
         switch(filter) {
             case "Active":
@@ -59,7 +84,7 @@ function App() {
         }
     }
 
-  return (
+    return (
     <div className="app">
         <div className="todo-list">
             <TodoInput value={todos} addItem={addItem}/>
