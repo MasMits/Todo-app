@@ -8,10 +8,28 @@
     gap: 26px;
 
     width: 371px;
-    min-height: 40px;
+    min-height: 57px;
 
     background: #ffffff;
     box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
     border-radius: 11px;
     color: #000000;
+}
+.input_todoitem{
+    background: #9EEBDA;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 43px;
+    gap: 26px;
+
+    width: 371px;
+    height: 72.6px;
+    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+}
+.title{
+    width: 190px;
+    word-wrap: break-word;
 }

@@ -18,8 +18,8 @@ const TodoItem = ({todoItem,  deleteItem, change, changeEditingMode, setItemTitl
                 <DeleteButton id={todoItem.id} deleteItem={deleteItem} />
             </div>
                 :
-                <div className="TodoItem" onDoubleClick={() => changeEditingMode(todoItem.id)}>
-                    <input className='input'
+                <div className="TodoItem input_todoitem" onDoubleClick={() => changeEditingMode(todoItem.id)}>
+                    <input className="input"
                            type={'text'}
                            onChange = {e => setTitle(e.target.value)}
                            value={title}
